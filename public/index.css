@@ -566,27 +566,3 @@ video {
 [hidden] {
   display: none;
 }
-.m-8 {
-	margin: 2rem;
-}
-.bg-red-400 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
-}
-.p-8 {
-	padding: 2rem;
-}
-.text-3xl {
-	font-size: 1.875rem;
-	line-height: 2.25rem;
-}
-.font-bold {
-	font-weight: 700;
-}
-.text-white {
-	--tw-text-opacity: 1;
-	color: rgba(255, 255, 255, var(--tw-text-opacity));
-}
-.underline {
-	text-decoration: underline;
-}
