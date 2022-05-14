@@ -1,7 +1,6 @@
 <script>
     import { Router, Route } from "svelte-routing";
     import Nav from "./components/Nav.svelte";
-    import Loader from "./components/Loader.svelte";
     import CompanyInfo from "./routes/CompanyInfo.svelte";
     import LaunchDetails from "./routes/LaunchDetails.svelte";
     import Launches from "./routes/Launches.svelte";
@@ -12,14 +11,16 @@
 </script>
 
 <Router {url}>
-    <main class="container mx-auto my-5">
+    <div class="app-container">
         <Nav />
-        <Router>
-            <Route path="launchpads" component={Launchpads} />
-            <Route path="launchpads/:id" component={LaunchpadDetails} />
-            <Route path="launches" component={Launches} />
-            <Route path="launches/:id" component={LaunchDetails} />
-            <Route path="/" component={CompanyInfo} />
-        </Router>
-    </main>
+        <main class="container mx-auto px-4 py-5">
+            <Router>
+                <Route path="launchpads" component={Launchpads} />
+                <Route path="launchpads/:id" component={LaunchpadDetails} />
+                <Route path="launches" component={Launches} />
+                <Route path="launches/:id" component={LaunchDetails} />
+                <Route path="/" component={CompanyInfo} />
+            </Router>
+        </main>
+    </div>
 </Router>
