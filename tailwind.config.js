@@ -6,8 +6,5 @@ module.exports = {
         removeDeprecatedGapUtilities: true
     },
     plugins: [],
-    purge: {
-        content: ["./src/App.svelte"],
-        enabled: production // disable purge in dev
-    }
+    purge: ["./**/*.svelte", "./**/*.html"]
 };

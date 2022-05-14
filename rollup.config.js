@@ -43,7 +43,8 @@ export default {
     },
     plugins: [
         replace({
-            GOOGLE_MAPS_API_KEY: JSON.stringify(process.env.GOOGLE_MAPS_API_KEY)
+            GOOGLE_MAPS_API_KEY: JSON.stringify(process.env.GOOGLE_MAPS_API_KEY),
+            preventAssignment: true
         }),
         image(),
         svelte({
