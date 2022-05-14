@@ -13,7 +13,7 @@
 <Router {url}>
     <div class="app-container">
         <Nav />
-        <main class="container mx-auto px-4 py-5">
+        <main class="container mx-auto px-4 pt-3 sm:pt-12 pb-3">
             <Router>
                 <Route path="launchpads" component={Launchpads} />
                 <Route path="launchpads/:id" component={LaunchpadDetails} />
