@@ -12,7 +12,7 @@
 </script>
 
 <Router {url}>
-    <main>
+    <main class="container mx-auto my-5">
         <Nav />
         <Router>
             <Route path="launchpads" component={Launchpads} />
@@ -22,5 +22,4 @@
             <Route path="/" component={CompanyInfo} />
         </Router>
     </main>
-    <Loader />
 </Router>
