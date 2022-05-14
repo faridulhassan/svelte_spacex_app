@@ -2,6 +2,9 @@
     import * as L from "leaflet";
     import "leaflet/dist/leaflet.css";
 
+    import { onDestroy, onMount } from "svelte";
+    import { uid } from "../utils";
+
     import icon from "leaflet/dist/images/marker-icon.png";
     import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
@@ -12,18 +15,21 @@
 
     L.Marker.prototype.options.icon = DefaultIcon;
 
-    import { onDestroy, onMount } from "svelte";
-    import { uid } from "../utils";
-
-    export let lat;
-    export let lng;
-    export let title;
-    export let shortDesc;
+    export let center = { lat: 33.92151381364131, lng: -118.32687829999999 };
+    export let data = [];
 
     let container;
     let map;
     let zoom = 8;
-    let center = { lat, lng };
+    let markers = [];
+    const setMarkers = (data) => {
+        for (let i = 0; i < data.length; i++) {
+            let marker = L.marker([data[i].latitude, data[i].longitude]);
+            marker.title = data[i].name;
+            markers.push(marker);
+            marker.addTo(map).bindPopup(`<div><b>${data[i].full_name}</b></div> ${data[i].locality}`);
+        }
+    };
 
     onMount(async () => {
         map = L.map(container.id, {
@@ -33,9 +39,10 @@
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-
-        L.marker([lat, lng]).addTo(map).bindPopup(`<div><b>${title}</b></div> ${shortDesc}`);
-        window.map = map;
+        setTimeout(() => {
+            map.invalidateSize();
+            setMarkers(data);
+        }, 100);
     });
     onDestroy(() => {
         if (map && map.remove) {
@@ -45,4 +52,4 @@
     });
 </script>
 
-<div id={`map-container-${uid()}`} class="h-96 bg-gray-300" bind:this={container} />
+<div id={`map-container-${uid()}`} class="w-full bg-gray-300" style="height: 700px;" bind:this={container} />
