@@ -13,6 +13,7 @@
     function setLoading(is_loading) {
         isLoading = is_loading;
     }
+    let error = null;
     onMount(() => {
         setLoading(true);
         getData({
@@ -23,12 +24,22 @@
                 launchpads = result;
                 console.log(launchpads);
             })
-            .catch((error) => {
+            .catch((err) => {
                 setLoading(false);
-                console.error(error);
+                if (err.status === 404) {
+                    error = "Sorry, requested data not found! Please try again later.";
+                } else if (err.data) {
+                    error = err.data;
+                } else {
+                    error = "Something went wrong! Please try again later.";
+                }
             });
     });
 </script>
+
+<svelte:head>
+    <title>Launchpads</title>
+</svelte:head>
 
 <div>
     <h1 class="text-4xl mb-3">Launchpads</h1>
@@ -38,5 +49,7 @@
 
     {#if launchpads && launchpads.length}
         <LeafletMap {center} data={launchpads} />
+    {:else if error}
+        <p class="mt-64 text-red-500 font-bold text-center text-3xl sm:text-5xl">{error}</p>
     {/if}
 </div>
