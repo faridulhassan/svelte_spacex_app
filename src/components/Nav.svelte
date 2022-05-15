@@ -46,9 +46,9 @@
                 </svg>
             </Link>
             <div class="flex justify-center sm:justify-start">
-                <Link to="/" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-5 items-center py-2 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Company Info</Link>
-                <Link to="launches" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-5 items-center py-2 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Launches</Link>
-                <Link to="launchpads" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-5 items-center py-2 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Launchpads</Link>
+                <Link to="/" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-2 sm:px-5 items-center py-1 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Company Info</Link>
+                <Link to="launches" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-2 sm:px-5 items-center py-1 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Launches</Link>
+                <Link to="launchpads" class="font-bold border-b-2 border-transparent hover:border-gray-700 flex px-2 sm:px-5 items-center py-1 sm:py-6 text-sm leading-5 text-white hover:text-grey-300 hover:bg-gray-900 focus:outline-none transition duration-150 ease-in-out">Launchpads</Link>
             </div>
         </div>
     </div>
