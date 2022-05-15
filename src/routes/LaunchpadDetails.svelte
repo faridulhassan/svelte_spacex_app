@@ -9,7 +9,6 @@
 
     let launchpad = location.state;
     let error = null;
-    console.log(launchpad);
     onMount(() => {
         if (!launchpad) {
             getData({
@@ -17,7 +16,6 @@
             })
                 .then((result) => {
                     launchpad = result;
-                    console.log(launchpad);
                 })
                 .catch((err) => {
                     if (err.status === 404) {

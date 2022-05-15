@@ -27,7 +27,6 @@
             .then((result) => {
                 setLoading(false);
                 company_info = result;
-                console.log(company_info);
             })
             .catch((err) => {
                 setLoading(false);
