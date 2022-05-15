@@ -53,27 +53,27 @@
         <div class="flex flex-col sm:flex-row -mx-3 mb-8">
             <div class="basis-1/2 px-3  mb-4">
                 <h1 class="text-4xl mb-3">{company_info.name}</h1>
-                <div class="bg-gray-600 shadow rounded-xl text-gray-300 p-4 h-auto sm:h-56">
+                <div class="bg-white p-4 rounded mt-5 mb-7 text-gray-500 shadow h-auto sm:h-56">
                     <p>{company_info.summary}</p>
                 </div>
             </div>
             <div class="basis-1/2 px-3 mb-4 ">
                 <h2 class="text-4xl mb-3">Core Persons</h2>
-                <div class="bg-gray-600 shadow rounded-xl text-gray-300">
+                <div class="bg-white px-4 rounded mt-5 mb-7 text-gray-500 shadow">
                     <ul>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b>CEO</b>
                             {company_info.ceo}
                         </li>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b>CTO</b>
                             {company_info.cto}
                         </li>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b>COO</b>
                             {company_info.coo}
                         </li>
-                        <li class="border-b-0 border-gray-500 px-4 py-4">
+                        <li class="border-b-0 border-gray-200 px-4 py-4">
                             <b>CTO Propulsion</b>
                             {company_info.cto_propulsion}
                         </li>
@@ -86,18 +86,18 @@
             <div class="basis-1/2 px-3 mb-4">
                 <h2 class="text-4xl mb-3">Company Stats</h2>
 
-                <div class="bg-gray-600 shadow rounded-xl text-gray-300">
+                <div class="bg-white px-4 rounded mt-5 text-gray-500 shadow">
                     <ul>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b> {company_info.founded}</b> founded
                         </li>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b> {company_info.employees}</b> Employees
                         </li>
-                        <li class="border-b border-gray-500 px-4 py-4">
+                        <li class="border-b border-gray-200 px-4 py-4">
                             <b> {company_info.vehicles}</b> Vehicles
                         </li>
-                        <li class="border-b-0 border-gray-500 px-4 py-4">
+                        <li class="border-b-0 border-gray-200 px-4 py-4">
                             <b> ${convertToInternationalCurrencySystem(company_info.valuation)}</b> valuation
                         </li>
                     </ul>
@@ -105,7 +105,7 @@
             </div>
             <div class="basis-1/2 px-3 mb-4 ">
                 <h2 class="text-4xl mb-3">Contact Address</h2>
-                <div class="bg-gray-600 shadow rounded-xl text-gray-300 p-4 h-auto sm:h-56">
+                <div class="bg-white rounded mt-5 text-gray-500 shadow p-4 h-auto sm:h-56">
                     <p>{`${company_info.headquarters.address}, ${company_info.headquarters.city}, ${company_info.headquarters.state}`}</p>
                     <ul class="social_links inline-flex mt-3">
                         {#each Object.entries(company_info.links) as [title, link] (title)}
