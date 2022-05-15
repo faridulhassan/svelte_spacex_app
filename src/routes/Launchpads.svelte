@@ -22,7 +22,6 @@
             .then((result) => {
                 setLoading(false);
                 launchpads = result;
-                console.log(launchpads);
             })
             .catch((err) => {
                 setLoading(false);
