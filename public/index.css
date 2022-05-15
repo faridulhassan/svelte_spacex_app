@@ -660,9 +660,6 @@ video {
 .inline-flex {
 	display: inline-flex;
 }
-.h-96 {
-	height: 24rem;
-}
 .h-12 {
 	height: 3rem;
 }
@@ -675,11 +672,11 @@ video {
 .min-h-full {
 	min-height: 100%;
 }
-.w-12 {
-	width: 3rem;
-}
 .w-full {
 	width: 100%;
+}
+.w-12 {
+	width: 3rem;
 }
 .w-6 {
 	width: 1.5rem;
