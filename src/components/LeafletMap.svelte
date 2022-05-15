@@ -29,6 +29,9 @@
             markers.push(marker);
             marker.addTo(map).bindPopup(`<div><b>${data[i].full_name}</b></div> ${data[i].locality}`);
         }
+        var group = new L.featureGroup(markers);
+
+        map.fitBounds(group.getBounds());
     };
 
     onMount(async () => {
@@ -39,6 +42,7 @@
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
         setTimeout(() => {
             map.invalidateSize();
             setMarkers(data);
@@ -52,4 +56,4 @@
     });
 </script>
 
-<div id={`map-container-${uid()}`} class="w-full bg-gray-300" style="height: 700px;" bind:this={container} />
+<div id={`map-container-${uid()}`} class="w-full bg-gray-300 rounded-sm" style="height: 700px;" bind:this={container} />

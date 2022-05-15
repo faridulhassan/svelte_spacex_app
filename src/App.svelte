@@ -11,7 +11,7 @@
 <Router {url}>
     <div class="app-container">
         <Nav />
-        <main class="container mx-auto px-4 pt-3 sm:pt-12 sm:pb-7 pb-3">
+        <main class="container mx-auto px-4 pt-3 sm:pt-8 sm:pb-7 pb-3">
             <Router>
                 <Route path="launchpads" component={Launchpads} />
                 <Route path="launches" component={Launches} />
