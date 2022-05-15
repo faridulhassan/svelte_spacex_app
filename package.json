@@ -31,6 +31,7 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "leaflet": "^1.8.0",
+    "moment": "^2.29.3",
     "sirv-cli": "^2.0.0",
     "svelte-routing": "^1.6.0"
   }
